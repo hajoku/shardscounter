@@ -56,15 +56,10 @@ C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net1
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\com.companyname.ShardsCounter-Signed.aab
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\com.companyname.ShardsCounter-Signed.apk
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\com.companyname.ShardsCounter-Signed.apk.idsig
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\build.props
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\adb.props
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\_CompileBindingJava.FileList.txt
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.csproj.AssemblyReference.cache
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\_AndroidResolvedResources.hash
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\libraryprojectimports.cache
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\stamp\_BuildLibraryImportsCache.stamp
@@ -78,7 +73,6 @@ C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net1
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.AssemblyInfoInputs.cache
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.AssemblyInfo.cs
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.csproj.CoreCompileInputs.cache
-C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCo.4EDA4FBC.Up2Date
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.dll
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.pdb
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.genruntimeconfig.cache
@@ -643,3 +637,9 @@ C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net1
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\stamp\_GenerateJavaStubs.stamp
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCounter.csproj.AssemblyReference.cache
+C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\obj\Debug\net10.0-android\ShardsCo.4EDA4FBC.Up2Date

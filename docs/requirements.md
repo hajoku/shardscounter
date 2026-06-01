@@ -129,14 +129,16 @@ To be specified.
 
 - The initial layout target is landscape orientation.
 - Portrait orientation is ignored for the initial implementation.
-- The screen is organized as two player rows:
-  - Row 1: `[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage]`
-  - Row 2: `[New Game][P2 Identity][P2 HP][P2 Mastery][End Turn spanning below Crystals and Damage]`
+- The screen is organized as two player rows where each player row shows the identity as a narrow strip above side-by-side HP and Mastery controls:
+  - Row 1: `[New Game][P1 Identity above P1 HP/P1 Mastery][Crystals][Damage]`
+  - Row 2: `[New Game][P2 Identity above P2 HP/P2 Mastery][End Turn spanning below Crystals and Damage]`
 - The `New Game` button is placed left of the player identity areas.
 - The `New Game` button hit area is not rotated; only its visible text is statically rotated 90 degrees so it is upright when the phone is held upright. This does not require checking the current device orientation.
 - `Crystals`, `Damage`, and `End Turn` are shared turn-control areas, not duplicated per player.
 - `New Game` is a shared control area, not duplicated per player.
 - The shared `New Game` area spans both player rows.
+- Each player identity area spans the width of that player's HP and Mastery controls.
+- The shared turn-controls area containing Crystals, Damage, and End Turn should be wider than the player stats area, approximately 66% turn controls to 34% player stats.
 - The shared `Crystals` and `Damage` areas are side by side, and the shared `End Turn` button is below them.
 - The shared `End Turn` button should be only tall enough to comfortably fit its text.
 - The shared turn-control areas rotate toward the active player.
@@ -154,6 +156,7 @@ To be specified.
   - Bottom left: `-5`
   - Bottom right: `+5`
 - The current value is visually larger than the adjustment buttons.
+- HP and Mastery do not show separate header labels; their center values include suffixes, for example `50 HP` and `0 M`.
 
 ### 5.5 Persistence / Game State
 

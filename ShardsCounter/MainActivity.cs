@@ -292,19 +292,26 @@ namespace ShardsCounter
                 identityText.SetTextColor(Color.White);
             }
 
-            SetValueControl(healthControl, "HP", player.HealthPoints);
-            SetValueControl(masteryControl, "Mastery", player.Mastery);
+            SetValueControl(healthControl, string.Empty, $"{player.HealthPoints} HP");
+            SetValueControl(masteryControl, string.Empty, $"{player.Mastery} M");
         }
 
         private static void SetValueControl(View? control, string title, int value)
+        {
+            SetValueControl(control, title, value.ToString());
+        }
+
+        private static void SetValueControl(View? control, string title, string valueText)
         {
             if (control is null)
             {
                 return;
             }
 
-            control.FindViewById<TextView>(Resource.Id.controlTitleText)!.Text = title;
-            control.FindViewById<TextView>(Resource.Id.controlValueText)!.Text = value.ToString();
+            var titleText = control.FindViewById<TextView>(Resource.Id.controlTitleText)!;
+            titleText.Text = title;
+            titleText.Visibility = string.IsNullOrWhiteSpace(title) ? ViewStates.Gone : ViewStates.Visible;
+            control.FindViewById<TextView>(Resource.Id.controlValueText)!.Text = valueText;
         }
 
         private static void UpdateIdentityButtons(LinearLayout? container, string? selectedIdentityName)

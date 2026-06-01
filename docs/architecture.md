@@ -200,8 +200,8 @@ Behavior:
 Landscape layout:
 
 ```plaintext
-[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage]
-[New Game][P2 Identity][P2 HP][P2 Mastery][End Turn below Crystals/Damage]
+[New Game][P1 Identity above P1 HP/P1 Mastery][Crystals][Damage]
+[New Game][P2 Identity above P2 HP/P2 Mastery][End Turn below Crystals/Damage]
 ```
 
 Shared areas:
@@ -211,6 +211,8 @@ Shared areas:
 - `Crystals` and `Damage` are side by side in a shared turn-control area.
 - `End Turn` is below `Crystals` and `Damage` in the shared turn-control area.
 - `End Turn` is only tall enough to comfortably fit its text.
+- In each player row, the identity area is a narrow strip above the side-by-side HP and Mastery controls.
+- The turn-controls area should take roughly 66% of the width available to stats/turn controls, with the player stats area taking roughly 34%.
 
 Rotation:
 
@@ -228,6 +230,8 @@ Health Points, Mastery, Crystals, and Damage use the same visual pattern:
      Value
 -5            +5
 ```
+
+HP and Mastery omit the separate title row and include their unit in the center value, such as `50 HP` and `0 M`.
 
 Behavior:
 

@@ -103,7 +103,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4.2"
+            android:layout_weight="3.4"
             android:orientation="vertical">
 
             <LinearLayout
@@ -113,36 +113,42 @@
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:background="#333333"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="4dp"
                 android:rotation="180">
 
                 <TextView
                     android:id="@+id/player1IdentityText"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
                     android:layout_margin="3dp"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <include
-                    android:id="@+id/player1HealthControl"
-                    layout="@layout/value_control"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                <include
-                    android:id="@+id/player1MasteryControl"
-                    layout="@layout/value_control"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
+                    <include
+                        android:id="@+id/player1HealthControl"
+                        layout="@layout/value_control"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/player1MasteryControl"
+                        layout="@layout/value_control"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -152,42 +158,48 @@
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:background="#333333"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="4dp">
 
                 <TextView
                     android:id="@+id/player2IdentityText"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
                     android:layout_margin="3dp"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <include
-                    android:id="@+id/player2HealthControl"
-                    layout="@layout/value_control"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                <include
-                    android:id="@+id/player2MasteryControl"
-                    layout="@layout/value_control"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
+                    <include
+                        android:id="@+id/player2HealthControl"
+                        layout="@layout/value_control"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/player2MasteryControl"
+                        layout="@layout/value_control"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.2"
+            android:layout_weight="6.6"
             android:orientation="vertical">
 
             <LinearLayout
