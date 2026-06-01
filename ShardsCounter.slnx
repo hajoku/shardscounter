@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ShardsCounter/ShardsCounter.csproj">
+    <Deploy />
+  </Project>
+</Solution>

@@ -1,0 +1,3 @@
+ShardsCounter.MainActivity, ShardsCounter;crc64b4954cecca2af068.MainActivity
+ShardsCounter.MainActivity;crc64b4954cecca2af068.MainActivity
+shardscounter.MainActivity;crc64b4954cecca2af068.MainActivity
