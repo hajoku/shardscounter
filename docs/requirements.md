@@ -95,7 +95,8 @@ The exact feature scope will be clarified step by step.
 - When a player reaches 0 Health Points, the app shows a small popup.
 - The popup text is: `Player <Name of Identity> won`.
 - The winning player is the opponent of the player whose Health Points reached 0.
-- When the game ends, all values are reset to their starting values.
+- The current game screen remains visible behind the popup.
+- When the player closes the winner popup, the app moves to identity selection for the next game.
 - When the game resets after a game end, both players choose their identity manually on their own side of the screen.
 - When the game resets after a game end, the starting player is the player who did not start the previous game.
 - If the players want to play another game, they can close the popup and continue with the reset game state.
@@ -196,7 +197,7 @@ To be specified.
 - Ending a turn applies the active player's accumulated damage to the opponent's Health Points, resets crystals and damage to 0, and switches the active player.
 - A player loses when their Health Points are at or below 0.
 - When a player reaches 0 Health Points, the app shows a popup saying `Player <Name of Identity> won`.
-- When the game ends, all values are reset to their starting values.
+- When the winner popup is closed, the app moves to identity selection for the next game.
 - When a game resets after game end, both players choose identities manually again.
 - The next game's starting player is the player who did not start the previous game.
 - After manually starting a `New Game`, the starting player alternates from the previous game's starting player.
@@ -230,3 +231,4 @@ To be specified.
 - Replaced random identity assignment with manual per-player identity selection, including duplicate-identity validation.
 - Clarified that identity selection is rotated toward players and manual New Game alternates the starting player.
 - Clarified that the first ever starting player is random, while later games alternate the starting player.
+- Clarified that after game end, the current game remains visible behind the winner popup and identity selection is shown only after closing the popup.

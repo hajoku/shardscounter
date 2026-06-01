@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShardsCounter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6dd490cbb730047939c9c3d9cc042ff225a5192e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShardsCounter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShardsCounter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
