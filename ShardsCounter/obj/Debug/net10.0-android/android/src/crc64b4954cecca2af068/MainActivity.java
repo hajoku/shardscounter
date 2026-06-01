@@ -11,6 +11,7 @@ public class MainActivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_onWindowFocusChanged:(Z)V:GetOnWindowFocusChanged_ZHandler\n" +
 			"n_onPause:()V:GetOnPauseHandler\n" +
 			"";
 		mono.android.Runtime.register ("ShardsCounter.MainActivity, ShardsCounter", MainActivity.class, __md_methods);
@@ -30,6 +31,13 @@ public class MainActivity
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
+
+	public void onWindowFocusChanged (boolean p0)
+	{
+		n_onWindowFocusChanged (p0);
+	}
+
+	private native void n_onWindowFocusChanged (boolean p0);
 
 	public void onPause ()
 	{

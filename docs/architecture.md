@@ -200,16 +200,17 @@ Behavior:
 Landscape layout:
 
 ```plaintext
-[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage][End Turn]
-[New Game][P2 Identity][P2 HP][P2 Mastery][Crystals][Damage][End Turn]
+[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage]
+[New Game][P2 Identity][P2 HP][P2 Mastery][End Turn below Crystals/Damage]
 ```
 
 Shared areas:
 
 - `New Game` spans both rows.
-- `Crystals` spans both rows.
-- `Damage` spans both rows.
-- `End Turn` spans both rows.
+- `New Game` uses an unrotated button hit area with an overlaid text label that is statically rotated 90 degrees so it is upright when the phone is held upright; the app does not check the current device orientation for this.
+- `Crystals` and `Damage` are side by side in a shared turn-control area.
+- `End Turn` is below `Crystals` and `Damage` in the shared turn-control area.
+- `End Turn` is only tall enough to comfortably fit its text.
 
 Rotation:
 

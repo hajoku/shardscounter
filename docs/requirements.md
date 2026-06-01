@@ -130,13 +130,15 @@ To be specified.
 - The initial layout target is landscape orientation.
 - Portrait orientation is ignored for the initial implementation.
 - The screen is organized as two player rows:
-  - Row 1: `[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage][End Turn]`
-  - Row 2: `[New Game][P2 Identity][P2 HP][P2 Mastery][Crystals][Damage][End Turn]`
+  - Row 1: `[New Game][P1 Identity][P1 HP][P1 Mastery][Crystals][Damage]`
+  - Row 2: `[New Game][P2 Identity][P2 HP][P2 Mastery][End Turn spanning below Crystals and Damage]`
 - The `New Game` button is placed left of the player identity areas.
+- The `New Game` button hit area is not rotated; only its visible text is statically rotated 90 degrees so it is upright when the phone is held upright. This does not require checking the current device orientation.
 - `Crystals`, `Damage`, and `End Turn` are shared turn-control areas, not duplicated per player.
 - `New Game` is a shared control area, not duplicated per player.
 - The shared `New Game` area spans both player rows.
-- The shared `Crystals`, `Damage`, and `End Turn` areas span both player rows.
+- The shared `Crystals` and `Damage` areas are side by side, and the shared `End Turn` button is below them.
+- The shared `End Turn` button should be only tall enough to comfortably fit its text.
 - The shared turn-control areas rotate toward the active player.
 - Each player's own value areas are rotated toward that player.
 - The app does not need to decide which physical side of the device belongs to Player 1 or Player 2; players can rotate the device on the table if needed.

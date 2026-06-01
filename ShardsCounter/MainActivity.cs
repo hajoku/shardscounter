@@ -7,7 +7,7 @@ using GameState = ShardsCounter.Models.GameState;
 
 namespace ShardsCounter
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, ScreenOrientation = ScreenOrientation.Landscape)]
+    [Activity(Label = "@string/app_name", MainLauncher = true, ScreenOrientation = ScreenOrientation.Landscape, Theme = "@android:style/Theme.Material.NoActionBar.Fullscreen")]
     public class MainActivity : Activity
     {
         private readonly GameService _gameService = new();
@@ -34,7 +34,9 @@ namespace ShardsCounter
         {
             base.OnCreate(savedInstanceState);
 
-            Window?.AddFlags(WindowManagerFlags.KeepScreenOn);
+            Window?.AddFlags(WindowManagerFlags.KeepScreenOn | WindowManagerFlags.Fullscreen);
+            ActionBar?.Hide();
+            HideSystemUi();
             SetContentView(Resource.Layout.activity_main);
 
             _gameStateStore = new GameStateStore(this, _gameService);
@@ -44,6 +46,16 @@ namespace ShardsCounter
             CreateIdentityButtons();
             WireControls();
             Render();
+        }
+
+        public override void OnWindowFocusChanged(bool hasFocus)
+        {
+            base.OnWindowFocusChanged(hasFocus);
+
+            if (hasFocus)
+            {
+                HideSystemUi();
+            }
         }
 
         protected override void OnPause()
@@ -70,6 +82,22 @@ namespace ShardsCounter
             _damageControl = FindViewById(Resource.Id.damageControl);
             _newGameButton = FindViewById<Button>(Resource.Id.newGameButton);
             _endTurnButton = FindViewById<Button>(Resource.Id.endTurnButton);
+        }
+
+        private void HideSystemUi()
+        {
+            if (Window?.DecorView is null)
+            {
+                return;
+            }
+
+            Window.DecorView.SystemUiFlags =
+                SystemUiFlags.ImmersiveSticky |
+                SystemUiFlags.Fullscreen |
+                SystemUiFlags.HideNavigation |
+                SystemUiFlags.LayoutFullscreen |
+                SystemUiFlags.LayoutHideNavigation |
+                SystemUiFlags.LayoutStable;
         }
 
         private void CreateIdentityButtons()
