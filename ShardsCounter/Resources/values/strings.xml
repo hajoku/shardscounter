@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">ShardsCounter</string>
-    <string name="app_text">Hello, Android!</string>
+    <string name="player_1_choose_identity">Player 1: choose identity</string>
+    <string name="player_2_choose_identity">Player 2: choose identity</string>
+    <string name="new_game">New Game</string>
+    <string name="end_turn">End Turn</string>
+    <string name="confirm_new_game_title">Start a new game?</string>
+    <string name="confirm_new_game_message">Current game progress will be lost.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
 </resources>
