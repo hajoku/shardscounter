@@ -23,6 +23,7 @@ int id player2IdentityText 0x7f020014
 int id player2MasteryControl 0x7f020015
 int id player2Row 0x7f020016
 int id player2SelectionArea 0x7f020017
+int id turnControlsLayout 0x7f020018
 int layout activity_main 0x7f030000
 int layout value_control 0x7f030001
 int mipmap appicon 0x7f040000

@@ -138,6 +138,7 @@
                         layout="@layout/value_control"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="#2E7D32"
                         android:layout_margin="3dp"
                         android:layout_weight="1" />
 
@@ -146,6 +147,7 @@
                         layout="@layout/value_control"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="#FDD835"
                         android:layout_margin="3dp"
                         android:layout_weight="1" />
                 </LinearLayout>
@@ -182,6 +184,7 @@
                         layout="@layout/value_control"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="#2E7D32"
                         android:layout_margin="3dp"
                         android:layout_weight="1" />
 
@@ -190,6 +193,7 @@
                         layout="@layout/value_control"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:background="#FDD835"
                         android:layout_margin="3dp"
                         android:layout_weight="1" />
                 </LinearLayout>
@@ -197,6 +201,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/turnControlsLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="6.6"
@@ -213,6 +218,7 @@
                     layout="@layout/value_control"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:background="#81D4FA"
                     android:layout_margin="3dp"
                     android:layout_weight="1" />
 
@@ -221,6 +227,7 @@
                     layout="@layout/value_control"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:background="#C62828"
                     android:layout_margin="3dp"
                     android:layout_weight="1" />
             </LinearLayout>

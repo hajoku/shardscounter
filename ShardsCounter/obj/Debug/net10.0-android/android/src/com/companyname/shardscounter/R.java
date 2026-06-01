@@ -36,6 +36,7 @@ public final class R {
     public static final int player2MasteryControl=0x7f020015;
     public static final int player2Row=0x7f020016;
     public static final int player2SelectionArea=0x7f020017;
+    public static final int turnControlsLayout=0x7f020018;
   }
   public static final class layout {
     public static final int activity_main=0x7f030000;

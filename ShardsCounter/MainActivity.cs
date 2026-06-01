@@ -25,6 +25,7 @@ namespace ShardsCounter
         private View? _player1MasteryControl;
         private View? _player2HealthControl;
         private View? _player2MasteryControl;
+        private LinearLayout? _turnControlsLayout;
         private View? _crystalsControl;
         private View? _damageControl;
         private Button? _newGameButton;
@@ -78,10 +79,18 @@ namespace ShardsCounter
             _player1MasteryControl = FindViewById(Resource.Id.player1MasteryControl);
             _player2HealthControl = FindViewById(Resource.Id.player2HealthControl);
             _player2MasteryControl = FindViewById(Resource.Id.player2MasteryControl);
+            _turnControlsLayout = FindViewById<LinearLayout>(Resource.Id.turnControlsLayout);
             _crystalsControl = FindViewById(Resource.Id.crystalsControl);
             _damageControl = FindViewById(Resource.Id.damageControl);
             _newGameButton = FindViewById<Button>(Resource.Id.newGameButton);
             _endTurnButton = FindViewById<Button>(Resource.Id.endTurnButton);
+
+            _player1HealthControl?.SetBackgroundColor(ParseColor("#2E7D32"));
+            _player2HealthControl?.SetBackgroundColor(ParseColor("#2E7D32"));
+            _player1MasteryControl?.SetBackgroundColor(ParseColor("#FDD835"));
+            _player2MasteryControl?.SetBackgroundColor(ParseColor("#FDD835"));
+            _crystalsControl?.SetBackgroundColor(ParseColor("#81D4FA"));
+            _damageControl?.SetBackgroundColor(ParseColor("#C62828"));
         }
 
         private void HideSystemUi()
@@ -259,19 +268,9 @@ namespace ShardsCounter
             SetValueControl(_damageControl, "Damage", State.CurrentTurnDamage);
 
             var sharedRotation = State.ActivePlayer == PlayerSlot.Player1 ? 180f : 0f;
-            if (_crystalsControl is not null)
+            if (_turnControlsLayout is not null)
             {
-                _crystalsControl.Rotation = sharedRotation;
-            }
-
-            if (_damageControl is not null)
-            {
-                _damageControl.Rotation = sharedRotation;
-            }
-
-            if (_endTurnButton is not null)
-            {
-                _endTurnButton.Rotation = sharedRotation;
+                _turnControlsLayout.Rotation = sharedRotation;
             }
         }
 

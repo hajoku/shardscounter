@@ -139,9 +139,9 @@ To be specified.
 - The shared `New Game` area spans both player rows.
 - Each player identity area spans the width of that player's HP and Mastery controls.
 - The shared turn-controls area containing Crystals, Damage, and End Turn should be wider than the player stats area, approximately 66% turn controls to 34% player stats.
-- The shared `Crystals` and `Damage` areas are side by side, and the shared `End Turn` button is below them.
+- The shared `Crystals` and `Damage` areas are side by side, and the shared `End Turn` button is below them from the active player's point of view.
 - The shared `End Turn` button should be only tall enough to comfortably fit its text.
-- The shared turn-control areas rotate toward the active player.
+- The shared turn-controls group rotates toward the active player so `End Turn` stays below `Crystals` and `Damage` from the active player's point of view.
 - Each player's own value areas are rotated toward that player.
 - The app does not need to decide which physical side of the device belongs to Player 1 or Player 2; players can rotate the device on the table if needed.
 
