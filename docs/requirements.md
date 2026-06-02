@@ -79,6 +79,8 @@ The exact feature scope will be clarified step by step.
 - Damage can be changed using +1, -1, +5, and -5 buttons.
 - Crystals can never go below 0.
 - Damage can never go below 0.
+- The active player can use `Buy Mastery` once per turn if Crystals is at least 1 and that player's Mastery is below 30.
+- `Buy Mastery` reduces current-turn Crystals by 1 and increases the active player's Mastery by 1.
 - When the next turn starts, the app must show that the other player is now the active player.
 
 #### 5.1.4 End Turn Behavior
@@ -131,17 +133,18 @@ To be specified.
 - Portrait orientation is ignored for the initial implementation.
 - The screen is organized as two player rows where each player row shows the identity as a narrow strip above side-by-side HP and Mastery controls:
   - Row 1: `[New Game][P1 Identity above P1 HP/P1 Mastery][Crystals][Damage]`
-  - Row 2: `[New Game][P2 Identity above P2 HP/P2 Mastery][End Turn spanning below Crystals and Damage]`
+  - Row 2: `[New Game][P2 Identity above P2 HP/P2 Mastery][Buy Mastery][End Turn]`
 - The `New Game` button is placed left of the player identity areas.
 - The `New Game` button hit area is not rotated; only its visible text is statically rotated 90 degrees so it is upright when the phone is held upright. This does not require checking the current device orientation.
-- `Crystals`, `Damage`, and `End Turn` are shared turn-control areas, not duplicated per player.
+- `Crystals`, `Damage`, `Buy Mastery`, and `End Turn` are shared turn-control areas, not duplicated per player.
 - `New Game` is a shared control area, not duplicated per player.
 - The shared `New Game` area spans both player rows.
 - Each player identity area spans the width of that player's HP and Mastery controls.
-- The shared turn-controls area containing Crystals, Damage, and End Turn should be wider than the player stats area, approximately 66% turn controls to 34% player stats.
-- The shared `Crystals` and `Damage` areas are side by side, and the shared `End Turn` button is below them from the active player's point of view.
-- The shared `End Turn` button should be only tall enough to comfortably fit its text.
-- The shared turn-controls group rotates toward the active player so `End Turn` stays below `Crystals` and `Damage` from the active player's point of view.
+- The shared turn-controls area containing Crystals, Damage, Buy Mastery, and End Turn should be wider than the player stats area, approximately 66% turn controls to 34% player stats.
+- The shared `Crystals` and `Damage` areas are side by side with equal width.
+- The shared `Buy Mastery` and `End Turn` buttons are below `Crystals` and `Damage` from the active player's point of view.
+- The shared bottom button row should be only tall enough to comfortably fit its text.
+- The shared turn-controls group rotates toward the active player so `Buy Mastery` and `End Turn` stay below `Crystals` and `Damage` from the active player's point of view.
 - Each player's own value areas are rotated toward that player.
 - The app does not need to decide which physical side of the device belongs to Player 1 or Player 2; players can rotate the device on the table if needed.
 

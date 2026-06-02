@@ -30,6 +30,7 @@ namespace ShardsCounter
         private View? _crystalsControl;
         private View? _damageControl;
         private Button? _newGameButton;
+        private Button? _buyMasteryButton;
         private Button? _endTurnButton;
 
         protected override void OnCreate(Bundle? savedInstanceState)
@@ -84,6 +85,7 @@ namespace ShardsCounter
             _crystalsControl = FindViewById(Resource.Id.crystalsControl);
             _damageControl = FindViewById(Resource.Id.damageControl);
             _newGameButton = FindViewById<Button>(Resource.Id.newGameButton);
+            _buyMasteryButton = FindViewById<Button>(Resource.Id.buyMasteryButton);
             _endTurnButton = FindViewById<Button>(Resource.Id.endTurnButton);
 
             _player1HealthControl?.SetBackgroundColor(ParseColor("#2E7D32"));
@@ -163,6 +165,11 @@ namespace ShardsCounter
                 _newGameButton.Click += (_, _) => ShowNewGameConfirmation();
             }
 
+            if (_buyMasteryButton is not null)
+            {
+                _buyMasteryButton.Click += (_, _) => BuyMastery();
+            }
+
             if (_endTurnButton is not null)
             {
                 _endTurnButton.Click += (_, _) => EndTurn();
@@ -207,6 +214,15 @@ namespace ShardsCounter
             change();
             SaveState();
             Render();
+        }
+
+        private void BuyMastery()
+        {
+            if (_gameService.BuyMastery(State))
+            {
+                SaveState();
+                Render();
+            }
         }
 
         private void EndTurn()
@@ -282,6 +298,13 @@ namespace ShardsCounter
             if (_turnControlsLayout is not null)
             {
                 _turnControlsLayout.Rotation = sharedRotation;
+            }
+
+            if (_buyMasteryButton is not null)
+            {
+                var canBuyMastery = _gameService.CanBuyMastery(State);
+                _buyMasteryButton.Enabled = canBuyMastery;
+                _buyMasteryButton.Alpha = 1f;
             }
         }
 

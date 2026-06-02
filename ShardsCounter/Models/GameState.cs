@@ -20,6 +20,8 @@ public sealed class GameState
 
     public int CurrentTurnDamage { get; set; }
 
+    public bool HasBoughtMasteryThisTurn { get; set; }
+
     public string? PendingPlayer1IdentityName { get; set; }
 
     public string? PendingPlayer2IdentityName { get; set; }

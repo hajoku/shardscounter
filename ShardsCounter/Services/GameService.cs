@@ -69,6 +69,7 @@ public sealed class GameService
         state.ActivePlayer = startingPlayer;
         state.CurrentTurnCrystals = 0;
         state.CurrentTurnDamage = 0;
+        state.HasBoughtMasteryThisTurn = false;
         state.Phase = GamePhase.InGame;
         state.HasCreatedFirstGame = true;
 
@@ -104,6 +105,26 @@ public sealed class GameService
         state.CurrentTurnDamage = Math.Max(0, state.CurrentTurnDamage + delta);
     }
 
+    public bool CanBuyMastery(GameState state)
+    {
+        return !state.HasBoughtMasteryThisTurn &&
+            state.CurrentTurnCrystals >= 1 &&
+            GetPlayer(state, state.ActivePlayer).Mastery < MaximumMastery;
+    }
+
+    public bool BuyMastery(GameState state)
+    {
+        if (!CanBuyMastery(state))
+        {
+            return false;
+        }
+
+        state.CurrentTurnCrystals--;
+        GetPlayer(state, state.ActivePlayer).Mastery++;
+        state.HasBoughtMasteryThisTurn = true;
+        return true;
+    }
+
     public PlayerSlot? EndTurn(GameState state)
     {
         var opponentSlot = GetOpponent(state.ActivePlayer);
@@ -117,6 +138,7 @@ public sealed class GameService
 
         state.CurrentTurnCrystals = 0;
         state.CurrentTurnDamage = 0;
+        state.HasBoughtMasteryThisTurn = false;
         state.ActivePlayer = opponentSlot;
         return null;
     }

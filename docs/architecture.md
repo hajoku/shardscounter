@@ -208,9 +208,10 @@ Shared areas:
 
 - `New Game` spans both rows.
 - `New Game` uses an unrotated button hit area with an overlaid text label that is statically rotated 90 degrees so it is upright when the phone is held upright; the app does not check the current device orientation for this.
-- `Crystals` and `Damage` are side by side in a shared turn-control area.
-- `End Turn` is below `Crystals` and `Damage` in the shared turn-control area from the active player's point of view.
-- `End Turn` is only tall enough to comfortably fit its text.
+- `Crystals` and `Damage` are side by side in a shared turn-control area with equal width.
+- `Buy Mastery` and `End Turn` are below `Crystals` and `Damage` in the shared turn-control area from the active player's point of view.
+- The bottom button row is only tall enough to comfortably fit its text.
+- `Buy Mastery` is enabled once per turn when current-turn Crystals is at least 1 and the active player's Mastery is below 30. It reduces Crystals by 1 and increases active-player Mastery by 1.
 - In each player row, the identity area is a narrow strip above the side-by-side HP and Mastery controls.
 - The turn-controls area should take roughly 66% of the width available to stats/turn controls, with the player stats area taking roughly 34%.
 
@@ -218,7 +219,7 @@ Rotation:
 
 - Player 1 value areas are rotated toward Player 1.
 - Player 2 value areas are rotated toward Player 2.
-- The shared turn-controls group containing `Crystals`, `Damage`, and `End Turn` rotates toward the active player so `End Turn` stays below the value controls from that player's point of view.
+- The shared turn-controls group containing `Crystals`, `Damage`, `Buy Mastery`, and `End Turn` rotates toward the active player so the bottom button row stays below the value controls from that player's point of view.
 - `New Game` does not need active-player rotation unless this becomes desirable later.
 
 ### 7.3 Reusable Value Control
