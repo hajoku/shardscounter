@@ -150,14 +150,14 @@ To be specified.
 - The Health Points, Mastery, Crystals, and Damage areas use the same internal control layout.
 - Each value area contains four adjustment buttons and the current value.
 - The layout is:
-  - Top left: `-1`
-  - Top right: `+1`
+  - Top left: transparent `-5` tap area
+  - Top right: transparent `+5` tap area
   - Center: current value
-  - Bottom left: `-5`
-  - Bottom right: `+5`
-- The current value is visually larger than the adjustment buttons.
+  - Bottom left: transparent `-1` tap area
+  - Bottom right: transparent `+1` tap area
+- Each transparent tap area occupies one quarter of the value area.
+- The current value is visually large and displayed over an enlarged PNG image representing the value type.
 - The center value shows only the number, without headers or units.
-- The center value is displayed over a PNG image representing the value type: HP, Mastery, Crystals, or Damage.
 
 ### 5.5 Persistence / Game State
 

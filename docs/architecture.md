@@ -226,12 +226,12 @@ Rotation:
 Health Points, Mastery, Crystals, and Damage use the same visual pattern:
 
 ```plaintext
--1            +1
-     Value
 -5            +5
+     Value
+-1            +1
 ```
 
-Value controls omit separate title rows and unit suffixes. The center value shows only the number over a PNG image representing the value type: HP, Mastery, Crystals, or Damage.
+Value controls omit separate title rows and unit suffixes. The center value shows only the number over an enlarged PNG image representing the value type: HP, Mastery, Crystals, or Damage. The four corner tap targets are transparent and each occupy one quarter of the area.
 
 Behavior:
 
