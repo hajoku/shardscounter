@@ -91,6 +91,13 @@ namespace ShardsCounter
             _player2MasteryControl?.SetBackgroundColor(ParseColor("#FDD835"));
             _crystalsControl?.SetBackgroundColor(ParseColor("#81D4FA"));
             _damageControl?.SetBackgroundColor(ParseColor("#C62828"));
+
+            SetValueIcon(_player1HealthControl, Resource.Drawable.value_hp);
+            SetValueIcon(_player2HealthControl, Resource.Drawable.value_hp);
+            SetValueIcon(_player1MasteryControl, Resource.Drawable.value_mastery);
+            SetValueIcon(_player2MasteryControl, Resource.Drawable.value_mastery);
+            SetValueIcon(_crystalsControl, Resource.Drawable.value_crystals);
+            SetValueIcon(_damageControl, Resource.Drawable.value_damage);
         }
 
         private void HideSystemUi()
@@ -264,8 +271,8 @@ namespace ShardsCounter
             RenderPlayer(PlayerSlot.Player1, _player1Row, _player1IdentityText, _player1HealthControl, _player1MasteryControl);
             RenderPlayer(PlayerSlot.Player2, _player2Row, _player2IdentityText, _player2HealthControl, _player2MasteryControl);
 
-            SetValueControl(_crystalsControl, "Crystals", State.CurrentTurnCrystals);
-            SetValueControl(_damageControl, "Damage", State.CurrentTurnDamage);
+            SetValueControl(_crystalsControl, State.CurrentTurnCrystals);
+            SetValueControl(_damageControl, State.CurrentTurnDamage);
 
             var sharedRotation = State.ActivePlayer == PlayerSlot.Player1 ? 180f : 0f;
             if (_turnControlsLayout is not null)
@@ -291,26 +298,23 @@ namespace ShardsCounter
                 identityText.SetTextColor(Color.White);
             }
 
-            SetValueControl(healthControl, string.Empty, $"{player.HealthPoints} HP");
-            SetValueControl(masteryControl, string.Empty, $"{player.Mastery} M");
+            SetValueControl(healthControl, player.HealthPoints);
+            SetValueControl(masteryControl, player.Mastery);
         }
 
-        private static void SetValueControl(View? control, string title, int value)
+        private static void SetValueIcon(View? control, int drawableResourceId)
         {
-            SetValueControl(control, title, value.ToString());
+            control?.FindViewById<ImageView>(Resource.Id.controlIconImage)?.SetImageResource(drawableResourceId);
         }
 
-        private static void SetValueControl(View? control, string title, string valueText)
+        private static void SetValueControl(View? control, int value)
         {
             if (control is null)
             {
                 return;
             }
 
-            var titleText = control.FindViewById<TextView>(Resource.Id.controlTitleText)!;
-            titleText.Text = title;
-            titleText.Visibility = string.IsNullOrWhiteSpace(title) ? ViewStates.Gone : ViewStates.Visible;
-            control.FindViewById<TextView>(Resource.Id.controlValueText)!.Text = valueText;
+            control.FindViewById<TextView>(Resource.Id.controlValueText)!.Text = value.ToString();
         }
 
         private static void UpdateIdentityButtons(LinearLayout? container, string? selectedIdentityName)

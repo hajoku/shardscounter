@@ -11,53 +11,59 @@ public final class R {
   public static final class color {
     public static final int ic_launcher_background=0x7f010000;
   }
+  public static final class drawable {
+    public static final int value_crystals=0x7f020000;
+    public static final int value_damage=0x7f020001;
+    public static final int value_hp=0x7f020002;
+    public static final int value_mastery=0x7f020003;
+  }
   public static final class id {
-    public static final int controlTitleText=0x7f020000;
-    public static final int controlValueText=0x7f020001;
-    public static final int crystalsControl=0x7f020002;
-    public static final int damageControl=0x7f020003;
-    public static final int decreaseFiveButton=0x7f020004;
-    public static final int decreaseOneButton=0x7f020005;
-    public static final int endTurnButton=0x7f020006;
-    public static final int gameLayout=0x7f020007;
-    public static final int identitySelectionLayout=0x7f020008;
-    public static final int increaseFiveButton=0x7f020009;
-    public static final int increaseOneButton=0x7f02000a;
-    public static final int newGameButton=0x7f02000b;
-    public static final int player1HealthControl=0x7f02000c;
-    public static final int player1IdentityButtons=0x7f02000d;
-    public static final int player1IdentityText=0x7f02000e;
-    public static final int player1MasteryControl=0x7f02000f;
-    public static final int player1Row=0x7f020010;
-    public static final int player1SelectionArea=0x7f020011;
-    public static final int player2HealthControl=0x7f020012;
-    public static final int player2IdentityButtons=0x7f020013;
-    public static final int player2IdentityText=0x7f020014;
-    public static final int player2MasteryControl=0x7f020015;
-    public static final int player2Row=0x7f020016;
-    public static final int player2SelectionArea=0x7f020017;
-    public static final int turnControlsLayout=0x7f020018;
+    public static final int controlIconImage=0x7f030000;
+    public static final int controlValueText=0x7f030001;
+    public static final int crystalsControl=0x7f030002;
+    public static final int damageControl=0x7f030003;
+    public static final int decreaseFiveButton=0x7f030004;
+    public static final int decreaseOneButton=0x7f030005;
+    public static final int endTurnButton=0x7f030006;
+    public static final int gameLayout=0x7f030007;
+    public static final int identitySelectionLayout=0x7f030008;
+    public static final int increaseFiveButton=0x7f030009;
+    public static final int increaseOneButton=0x7f03000a;
+    public static final int newGameButton=0x7f03000b;
+    public static final int player1HealthControl=0x7f03000c;
+    public static final int player1IdentityButtons=0x7f03000d;
+    public static final int player1IdentityText=0x7f03000e;
+    public static final int player1MasteryControl=0x7f03000f;
+    public static final int player1Row=0x7f030010;
+    public static final int player1SelectionArea=0x7f030011;
+    public static final int player2HealthControl=0x7f030012;
+    public static final int player2IdentityButtons=0x7f030013;
+    public static final int player2IdentityText=0x7f030014;
+    public static final int player2MasteryControl=0x7f030015;
+    public static final int player2Row=0x7f030016;
+    public static final int player2SelectionArea=0x7f030017;
+    public static final int turnControlsLayout=0x7f030018;
   }
   public static final class layout {
-    public static final int activity_main=0x7f030000;
-    public static final int value_control=0x7f030001;
+    public static final int activity_main=0x7f040000;
+    public static final int value_control=0x7f040001;
   }
   public static final class mipmap {
-    public static final int appicon=0x7f040000;
-    public static final int appicon_background=0x7f040001;
-    public static final int appicon_foreground=0x7f040002;
-    public static final int appicon_round=0x7f040003;
+    public static final int appicon=0x7f050000;
+    public static final int appicon_background=0x7f050001;
+    public static final int appicon_foreground=0x7f050002;
+    public static final int appicon_round=0x7f050003;
   }
   public static final class string {
-    public static final int app_name=0x7f050000;
-    public static final int confirm_new_game_message=0x7f050001;
-    public static final int confirm_new_game_title=0x7f050002;
-    public static final int end_turn=0x7f050003;
-    public static final int new_game=0x7f050004;
-    public static final int no=0x7f050005;
-    public static final int ok=0x7f050006;
-    public static final int player_1_choose_identity=0x7f050007;
-    public static final int player_2_choose_identity=0x7f050008;
-    public static final int yes=0x7f050009;
+    public static final int app_name=0x7f060000;
+    public static final int confirm_new_game_message=0x7f060001;
+    public static final int confirm_new_game_title=0x7f060002;
+    public static final int end_turn=0x7f060003;
+    public static final int new_game=0x7f060004;
+    public static final int no=0x7f060005;
+    public static final int ok=0x7f060006;
+    public static final int player_1_choose_identity=0x7f060007;
+    public static final int player_2_choose_identity=0x7f060008;
+    public static final int yes=0x7f060009;
   }
 }

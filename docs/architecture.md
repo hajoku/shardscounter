@@ -231,7 +231,7 @@ Health Points, Mastery, Crystals, and Damage use the same visual pattern:
 -5            +5
 ```
 
-HP and Mastery omit the separate title row and include their unit in the center value, such as `50 HP` and `0 M`.
+Value controls omit separate title rows and unit suffixes. The center value shows only the number over a PNG image representing the value type: HP, Mastery, Crystals, or Damage.
 
 Behavior:
 

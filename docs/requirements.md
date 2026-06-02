@@ -156,7 +156,8 @@ To be specified.
   - Bottom left: `-5`
   - Bottom right: `+5`
 - The current value is visually larger than the adjustment buttons.
-- HP and Mastery do not show separate header labels; their center values include suffixes, for example `50 HP` and `0 M`.
+- The center value shows only the number, without headers or units.
+- The center value is displayed over a PNG image representing the value type: HP, Mastery, Crystals, or Damage.
 
 ### 5.5 Persistence / Game State
 
