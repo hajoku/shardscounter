@@ -8,6 +8,7 @@
     android:padding="4dp">
 
     <LinearLayout
+        android:id="@+id/topButtonRow"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -36,6 +37,7 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/valueFrame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -64,6 +66,7 @@
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/bottomButtonRow"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

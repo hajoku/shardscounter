@@ -1,5 +1,6 @@
 using Android.Content.PM;
 using Android.Graphics;
+using Android.Util;
 using Android.Views;
 using ShardsCounter.Models;
 using ShardsCounter.Services;
@@ -98,6 +99,9 @@ namespace ShardsCounter
             SetValueIcon(_player2MasteryControl, Resource.Drawable.value_mastery);
             SetValueIcon(_crystalsControl, Resource.Drawable.value_crystals);
             SetValueIcon(_damageControl, Resource.Drawable.value_damage);
+
+            ApplyTurnValueControlStyle(_crystalsControl);
+            ApplyTurnValueControlStyle(_damageControl);
         }
 
         private void HideSystemUi()
@@ -305,6 +309,35 @@ namespace ShardsCounter
         private static void SetValueIcon(View? control, int drawableResourceId)
         {
             control?.FindViewById<ImageView>(Resource.Id.controlIconImage)?.SetImageResource(drawableResourceId);
+        }
+
+        private static void ApplyTurnValueControlStyle(View? control)
+        {
+            if (control is null)
+            {
+                return;
+            }
+
+            SetRowWeight(control.FindViewById<LinearLayout>(Resource.Id.topButtonRow), 0.6f);
+            SetRowWeight(control.FindViewById<FrameLayout>(Resource.Id.valueFrame), 1.8f);
+            SetRowWeight(control.FindViewById<LinearLayout>(Resource.Id.bottomButtonRow), 0.6f);
+
+            control.FindViewById<TextView>(Resource.Id.controlValueText)?.SetTextSize(ComplexUnitType.Sp, 46);
+            control.FindViewById<Button>(Resource.Id.decreaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 11);
+            control.FindViewById<Button>(Resource.Id.increaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 11);
+            control.FindViewById<Button>(Resource.Id.decreaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 11);
+            control.FindViewById<Button>(Resource.Id.increaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 11);
+        }
+
+        private static void SetRowWeight(View? row, float weight)
+        {
+            if (row?.LayoutParameters is not LinearLayout.LayoutParams layoutParameters)
+            {
+                return;
+            }
+
+            layoutParameters.Weight = weight;
+            row.LayoutParameters = layoutParameters;
         }
 
         private static void SetValueControl(View? control, int value)

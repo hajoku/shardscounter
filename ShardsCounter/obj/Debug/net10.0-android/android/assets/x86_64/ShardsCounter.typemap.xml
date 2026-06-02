@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="ShardsCounter" mvid="b1a5798495b24d0b8f5183bd5fb0a7e7">
+<api type="debug" assembly-name="ShardsCounter" mvid="ffec6037d319444fa2fe2a5576d9ff31">
   <java-to-managed>
     <entry java-name="crc64b4954cecca2af068/MainActivity" managed-name="ShardsCounter.MainActivity, ShardsCounter" managed-type-token-id="33554436" />
   </java-to-managed>
