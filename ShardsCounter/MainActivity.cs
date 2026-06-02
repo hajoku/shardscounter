@@ -323,10 +323,10 @@ namespace ShardsCounter
             SetRowWeight(control.FindViewById<LinearLayout>(Resource.Id.bottomButtonRow), 0.6f);
 
             control.FindViewById<TextView>(Resource.Id.controlValueText)?.SetTextSize(ComplexUnitType.Sp, 46);
-            control.FindViewById<Button>(Resource.Id.decreaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 11);
-            control.FindViewById<Button>(Resource.Id.increaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 11);
-            control.FindViewById<Button>(Resource.Id.decreaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 11);
-            control.FindViewById<Button>(Resource.Id.increaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 11);
+            control.FindViewById<Button>(Resource.Id.decreaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 14);
+            control.FindViewById<Button>(Resource.Id.increaseOneButton)?.SetTextSize(ComplexUnitType.Sp, 14);
+            control.FindViewById<Button>(Resource.Id.decreaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 14);
+            control.FindViewById<Button>(Resource.Id.increaseFiveButton)?.SetTextSize(ComplexUnitType.Sp, 14);
         }
 
         private static void SetRowWeight(View? row, float weight)
