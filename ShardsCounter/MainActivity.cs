@@ -246,7 +246,7 @@ namespace ShardsCounter
             {
                 var winnerName = _gameService.GetPlayer(State, winner.Value).IdentityName ?? winner.Value.ToString();
                 new AlertDialog.Builder(this)
-                    .SetMessage($"Player {winnerName} won")
+                    .SetMessage($"{winnerName} won")
                     .SetPositiveButton(Resource.String.ok, (_, _) =>
                     {
                         _gameService.MoveToIdentitySelection(State);
@@ -261,6 +261,7 @@ namespace ShardsCounter
         {
             var originalDamage = State.CurrentTurnDamage;
             var shield = 0;
+            var champion = 0;
 
             var contentLayout = new LinearLayout(this)
             {
@@ -273,6 +274,12 @@ namespace ShardsCounter
             SetValueIcon(shieldControl, Resource.Drawable.value_shield);
             SetValueTextSize(shieldControl, 120);
             SetValueControl(shieldControl, shield);
+
+            var championControl = LayoutInflater.Inflate(Resource.Layout.value_control, contentLayout, false)!;
+            championControl.SetBackgroundColor(Color.Rgb(74, 144, 226));
+            SetValueIcon(championControl, Resource.Drawable.value_champion);
+            SetValueTextSize(championControl, 120);
+            SetValueControl(championControl, champion);
 
             var damageValueText = new TextView(this)
             {
@@ -289,6 +296,11 @@ namespace ShardsCounter
             {
                 MarginEnd = Dp(6)
             });
+            contentLayout.AddView(championControl, new LinearLayout.LayoutParams(0, Dp(240), 1)
+            {
+                MarginStart = Dp(6),
+                MarginEnd = Dp(6)
+            });
             contentLayout.AddView(damageArea, new LinearLayout.LayoutParams(0, Dp(240), 1)
             {
                 MarginStart = Dp(6)
@@ -300,8 +312,9 @@ namespace ShardsCounter
 
             void UpdateResolvedDamage()
             {
-                damageValueText.Text = Math.Max(0, originalDamage - shield).ToString();
+                damageValueText.Text = Math.Max(0, originalDamage - shield - champion).ToString();
                 SetValueControl(shieldControl, shield);
+                SetValueControl(championControl, champion);
             }
 
             void AdjustShield(int delta)
@@ -310,13 +323,20 @@ namespace ShardsCounter
                 UpdateResolvedDamage();
             }
 
+            void AdjustChampion(int delta)
+            {
+                champion = Math.Max(0, champion + delta);
+                UpdateResolvedDamage();
+            }
+
             WireValueControl(shieldControl, () => shield, AdjustShield);
+            WireValueControl(championControl, () => champion, AdjustChampion);
             UpdateResolvedDamage();
 
             damageArea.Click += (_, _) =>
             {
                 dialog.Dismiss();
-                CompleteEndTurn(Math.Max(0, originalDamage - shield));
+                CompleteEndTurn(Math.Max(0, originalDamage - shield - champion));
             };
 
             dialog.Show();

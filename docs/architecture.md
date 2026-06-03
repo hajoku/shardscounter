@@ -212,7 +212,7 @@ Shared areas:
 - `Buy Mastery` and `End Turn` are below `Crystals` and `Damage` in the shared turn-control area from the active player's point of view.
 - The bottom button row is only tall enough to comfortably fit its text.
 - `Buy Mastery` is enabled once per turn when current-turn Crystals is at least 1 and the active player's Mastery is below 30. It reduces Crystals by 1 and increases active-player Mastery by 1.
-- `End Turn` opens a shield resolution popup with a Shield value control and a tappable Damage area when current-turn Damage is greater than 0. If Damage is 0, the popup is skipped and the turn advances immediately. The Shield value uses the shield image background and the same number size as the popup Damage value. Tapping the popup Damage area applies original damage minus shield and advances the turn.
+- `End Turn` opens a damage resolution popup with Shield and Champion value controls plus a tappable Damage area when current-turn Damage is greater than 0. If Damage is 0, the popup is skipped and the turn advances immediately. Shield and Champion use their image backgrounds and the same number size as the popup Damage value. Tapping the popup Damage area applies original damage minus shield minus champion and advances the turn.
 - In each player row, the identity area is a narrow strip above the side-by-side HP and Mastery controls.
 - The turn-controls area should take roughly 66% of the width available to stats/turn controls, with the player stats area taking roughly 34%.
 
