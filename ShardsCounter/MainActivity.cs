@@ -227,7 +227,18 @@ namespace ShardsCounter
 
         private void EndTurn()
         {
-            var winner = _gameService.EndTurn(State);
+            if (State.CurrentTurnDamage == 0)
+            {
+                CompleteEndTurn(0);
+                return;
+            }
+
+            ShowDamageResolutionDialog();
+        }
+
+        private void CompleteEndTurn(int resolvedDamage)
+        {
+            var winner = _gameService.EndTurn(State, resolvedDamage);
             SaveState();
             Render();
 
@@ -244,6 +255,87 @@ namespace ShardsCounter
                     })
                     .Show();
             }
+        }
+
+        private void ShowDamageResolutionDialog()
+        {
+            var originalDamage = State.CurrentTurnDamage;
+            var shield = 0;
+
+            var contentLayout = new LinearLayout(this)
+            {
+                Orientation = Orientation.Horizontal
+            };
+            contentLayout.SetPadding(Dp(12), Dp(12), Dp(12), Dp(12));
+
+            var shieldControl = LayoutInflater.Inflate(Resource.Layout.value_control, contentLayout, false)!;
+            shieldControl.SetBackgroundColor(Color.Rgb(84, 110, 122));
+            SetValueIcon(shieldControl, Resource.Drawable.value_shield);
+            SetValueTextSize(shieldControl, 120);
+            SetValueControl(shieldControl, shield);
+
+            var damageValueText = new TextView(this)
+            {
+                Gravity = GravityFlags.Center,
+                TextSize = 120,
+                Typeface = Typeface.DefaultBold
+            };
+            damageValueText.SetTextColor(Color.White);
+            damageValueText.SetShadowLayer(4, 2, 2, Color.Black);
+
+            var damageArea = CreateDamageResolutionArea(damageValueText);
+
+            contentLayout.AddView(shieldControl, new LinearLayout.LayoutParams(0, Dp(240), 1)
+            {
+                MarginEnd = Dp(6)
+            });
+            contentLayout.AddView(damageArea, new LinearLayout.LayoutParams(0, Dp(240), 1)
+            {
+                MarginStart = Dp(6)
+            });
+
+            var dialog = new AlertDialog.Builder(this)
+                .SetView(contentLayout)
+                .Create();
+
+            void UpdateResolvedDamage()
+            {
+                damageValueText.Text = Math.Max(0, originalDamage - shield).ToString();
+                SetValueControl(shieldControl, shield);
+            }
+
+            void AdjustShield(int delta)
+            {
+                shield = Math.Max(0, shield + delta);
+                UpdateResolvedDamage();
+            }
+
+            WireValueControl(shieldControl, () => shield, AdjustShield);
+            UpdateResolvedDamage();
+
+            damageArea.Click += (_, _) =>
+            {
+                dialog.Dismiss();
+                CompleteEndTurn(Math.Max(0, originalDamage - shield));
+            };
+
+            dialog.Show();
+        }
+
+        private FrameLayout CreateDamageResolutionArea(TextView damageValueText)
+        {
+            var damageArea = new FrameLayout(this);
+            damageArea.SetBackgroundColor(ParseColor("#C62828"));
+            damageArea.Clickable = true;
+
+            var damageImage = new ImageView(this);
+            damageImage.SetImageResource(Resource.Drawable.value_damage);
+            damageImage.Alpha = 0.75f;
+            damageImage.SetScaleType(ImageView.ScaleType.CenterInside);
+
+            damageArea.AddView(damageImage, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent, GravityFlags.Center));
+            damageArea.AddView(damageValueText, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent, GravityFlags.Center));
+            return damageArea;
         }
 
         private void ShowNewGameConfirmation()
@@ -385,6 +477,11 @@ namespace ShardsCounter
         private static Color ParseColor(string color)
         {
             return Color.ParseColor(color);
+        }
+
+        private int Dp(int value)
+        {
+            return (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, value, Resources.DisplayMetrics);
         }
     }
 }

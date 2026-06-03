@@ -85,7 +85,13 @@ The exact feature scope will be clarified step by step.
 
 #### 5.1.4 End Turn Behavior
 
-- When the active player ends their turn, the opponent's Health Points are reduced by the active player's accumulated damage.
+- When the active player ends their turn, a popup is shown to resolve shield against the active player's accumulated damage.
+- If the active player's accumulated damage is 0, the shield popup is skipped and the turn ends immediately.
+- The popup shows a Shield value control and a Damage area.
+- The Shield value uses the shield image background and the same number size as the popup Damage value.
+- Shield starts at 0, uses the same invisible corner controls as other values, and can never go below 0.
+- The popup Damage area displays the active player's original damage reduced by the Shield value, clamped to a minimum of 0.
+- Tapping the popup Damage area closes the popup and reduces the opponent's Health Points by the displayed damage.
 - After ending the turn, crystals reset to 0.
 - After ending the turn, damage resets to 0.
 - The turn switches to the other player.

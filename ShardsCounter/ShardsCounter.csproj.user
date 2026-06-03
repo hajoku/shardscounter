@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>pixel_6_-_api_33</SelectedDevice>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
-    <ActiveDebugProfile>HUAWEI VOG-L29</ActiveDebugProfile>
+    <SelectedDevice>pixel_9_-_api_36_0</SelectedDevice>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <ActiveDebugProfile>Pixel 9 - API 36.0 (Android 16.0 - API 36)</ActiveDebugProfile>
     <DefaultDevice>pixel_9_-_api_36_0</DefaultDevice>
     <_LastSelectedProfileId>C:\TechemTools\Learning\ShardsCounter\ShardsCounter\ShardsCounter\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>

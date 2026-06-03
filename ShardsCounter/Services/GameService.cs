@@ -127,9 +127,14 @@ public sealed class GameService
 
     public PlayerSlot? EndTurn(GameState state)
     {
+        return EndTurn(state, state.CurrentTurnDamage);
+    }
+
+    public PlayerSlot? EndTurn(GameState state, int resolvedDamage)
+    {
         var opponentSlot = GetOpponent(state.ActivePlayer);
         var opponent = GetPlayer(state, opponentSlot);
-        opponent.HealthPoints = Math.Max(MinimumHealthPoints, opponent.HealthPoints - state.CurrentTurnDamage);
+        opponent.HealthPoints = Math.Max(MinimumHealthPoints, opponent.HealthPoints - Math.Max(0, resolvedDamage));
 
         if (opponent.HealthPoints == MinimumHealthPoints)
         {
