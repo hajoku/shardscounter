@@ -98,12 +98,11 @@ The exact feature scope will be clarified step by step.
 - After ending the turn, damage resets to 0.
 - The turn switches to the other player.
 - If a player's Health Points are at or below 0, the game ends.
-- Mastery can never go below 0.
 
 #### 5.1.5 Game End Behavior
 
 - When a player reaches 0 Health Points, the app shows a small popup.
-- The popup text is: `Player <Name of Identity> won`.
+- The popup text is: `<Name of Identity> won`.
 - The winning player is the opponent of the player whose Health Points reached 0.
 - The current game screen remains visible behind the popup.
 - When the player closes the winner popup, the app moves to identity selection for the next game.
